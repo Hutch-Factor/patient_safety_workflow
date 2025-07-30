@@ -34,7 +34,7 @@ if selected_index:
 
     st.subheader(f"📌Incident: {selected_incident['report_id']}")
     st.markdown(f"**Date Reported:** {selected_incident['date_reported'].date()}")
-    st.markdown(f"**Reported By:** {selected_incident['reported_by']}")
+    st.markdown(f"**Reported By:** {selected_incident['reporter']}")
     st.markdown(f"**Department:** {selected_incident['department']}")
     st.markdown(f"**Severity:** {selected_incident['severity']}")
     st.markdown(f"**Status:** {selected_incident['status']}")
