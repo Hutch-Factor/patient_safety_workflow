@@ -45,7 +45,7 @@ with st.expander(" Submit a New Patient Safety Incident"):
 
         date_reported = st.date_input("Date Reported")
         reporter = st.text_input("Reported By (Name or Role)")
-        department = st.selectbox("Department", options=sorted(df["Department"].unuique()))
+        department = st.selectbox("Department", options=sorted(df["department"].unuique()))
         event_type = st.selectbox("Event Type", options=[
             "Fall", "Medication Error", "Equipment Malfunction", "Pressure Injury",
              "Misidentification", "Documentation Error", "Delayed Care"
