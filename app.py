@@ -10,7 +10,7 @@ def load_data():
     df = pd.read.csv("incident_data.csv", parse_dates=["date_reported", "follow_up_due"])
     return df
 
-df = load_data()
+df = load_data("incident_data.csv")
 
 #sidebar filters
 st.sidebar.header("Filter Incidents")
