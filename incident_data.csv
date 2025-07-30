@@ -1,0 +1,31 @@
+report_id,date_reported,reporter,department,event_type,severity,status,assigned_to,rca_complete,corrective_action,follow_up_due,outcome,description
+PS001,7/13/2025,Staff C,Med-Surg,Medication Error,High,In Review,Biomed Team,No,Policy updated,7/19/2025,Escalated,wrong meds given
+PS002,7/28/2025,Staff C,Radiology,Medication Error,High,Open,Biomed Team,No,Labeling changed,8/7/2025,Escalated,wrond dose given
+PS003,7/16/2025,Staff B,NICU,Misidentification,Moderate,Open,Quality Lead,No,New protocol issued,7/21/2025,No Harm,patient received improper procedure
+PS004,7/30/2025,Staff D,NICU,Fall,Moderate,Closed,Safety Officer,Yes,Labeling changed,8/5/2025,Escalated,patient fell in bathroom
+PS005,7/3/2025,Staff F,Radiology,Documentation Error,Low,In Review,Risk Manager,No,Labeling changed,7/13/2025,Resolved,wrong documentation given
+PS006,7/4/2025,Staff B,Med-Surg,Documentation Error,High,Closed,Wound Team,Yes,Bed alarm reinstalled,7/14/2025,Escalated,patient did not receive education upon discharge
+PS007,7/10/2025,Staff D,Lab,Equipment Malfunction,High,RCA,Risk Manager,Yes,New protocol issued,7/18/2025,Pending,CT scanner broken
+PS008,7/21/2025,Staff F,Radiology,Delayed Care,Moderate,In Review,Wound Team,No,Staff re-education,7/28/2025,Resolved,patient care delayed due to staffing absences
+PS009,7/5/2025,Staff B,Radiology,Delayed Care,Moderate,RCA,Quality Lead,Yes,Staff re-education,7/10/2025,No Harm,patient was late
+PS010,7/14/2025,Staff C,NICU,Pressure Injury,Critical,Closed,Biomed Team,Yes,Equipment repaired,7/20/2025,Resolved,bandgage wrappped too tightly
+PS011,7/7/2025,Staff C,ED,Misidentification,Low,Closed,Wound Team,Yes,Labeling changed,7/14/2025,Pending,patient was mistaken for another
+PS012,7/17/2025,Staff D,NICU,Pressure Injury,Moderate,RCA,Quality Lead,Yes,New protocol issued,7/27/2025,Resolved,bandage improperly applied
+PS013,7/18/2025,Staff C,OR,Equipment Malfunction,Moderate,Open,Quality Lead,No,Pending investigation,7/26/2025,Escalated,bed did not rise correctly
+PS014,7/20/2025,Staff C,ICU,Documentation Error,Critical,Open,Quality Lead,No,Staff re-education,8/2/2025,No Harm,patient chart was not documented correctly
+PS015,7/2/2025,Staff E,ED,Medication Error,Low,RCA,Safety Officer,Yes,Equipment repaired,7/11/2025,Escalated,medication dose was not correct
+PS016,7/12/2025,Staff B,Lab,Misidentification,Moderate,Open,Biomed Team,No,Bed alarm reinstalled,7/17/2025,No Harm,patient was mistaken for another
+PS017,7/10/2025,Staff D,Med-Surg,Medication Error,Moderate,In Review,Risk Manager,No,Policy updated,7/15/2025,Escalated,Incorrect medication instructions given to the patient
+PS018,7/18/2025,Staff A,Med-Surg,Documentation Error,Moderate,Closed,Quality Lead,Yes,New protocol issued,7/27/2025,Resolved,patient did not receive correct education
+PS019,7/2/2025,Staff D,ED,Documentation Error,Critical,In Review,Risk Manager,No,Equipment repaired,7/11/2025,Pending,patient documentation was not accurate
+PS020,7/17/2025,Staff D,Lab,Documentation Error,High,RCA,Quality Lead,Yes,Staff re-education,7/26/2025,No Harm,patient ate before procedure
+PS021,7/6/2025,Staff B,Radiology,Equipment Malfunction,Low,Closed,Safety Officer,Yes,Labeling changed,7/14/2025,Resolved,X-ray vest malfunctioned
+PS022,7/26/2025,Staff E,ICU,Equipment Malfunction,Low,RCA,Risk Manager,Yes,Policy updated,8/10/2025,Pending,IV pump was not working
+PS023,7/24/2025,Staff A,ICU,Medication Error,Critical,RCA,Risk Manager,Yes,Policy updated,8/3/2025,Resolved,Wrong medication given to the patient
+PS024,7/11/2025,Staff F,NICU,Medication Error,High,Closed,Risk Manager,Yes,Pending investigation,7/18/2025,Resolved,Wrong medication dose given to patient
+PS025,7/22/2025,Staff A,Med-Surg,Fall,Critical,Closed,Safety Officer,Yes,Labeling changed,8/5/2025,Pending,Patient fell in hallway returning from PT
+PS026,7/29/2025,Staff E,ICU,Equipment Malfunction,High,In Review,Wound Team,No,Pending investigation,8/13/2025,Resolved,BP cuff did not deflate
+PS027,7/24/2025,Staff C,NICU,Medication Error,Moderate,In Review,Safety Officer,No,New protocol issued,8/2/2025,Resolved,Patient given the wrong medication
+PS028,7/7/2025,Staff F,ED,Fall,High,RCA,Safety Officer,Yes,Equipment repaired,7/20/2025,Escalated,Patient fell due to a head injury
+PS029,7/2/2025,Staff D,ED,Pressure Injury,High,Open,Risk Manager,No,Policy updated,7/14/2025,Pending,bandage improperly applied
+PS030,7/10/2025,Staff C,OR,Pressure Injury,Low,In Review,Risk Manager,No,Pending investigation,7/19/2025,Pending,Pillow was not placed under knees during lengthy operation causing HAI 
