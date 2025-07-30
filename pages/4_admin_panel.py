@@ -16,6 +16,7 @@ def save_data(df):
     df.to_csv("incident_data.csv", index=False)
 
 df = load_data()
+df.columns = df.columns.str.lower()
 
 st.markdown("### Incident Management")
 
