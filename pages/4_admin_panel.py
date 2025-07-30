@@ -25,9 +25,9 @@ selected_id = st.selectbox("Select Incident ID to Manage", incident_ids)
 incident = df[df["report_id"] == selected_id].iloc[0]
 
 #Editable Fields
-new_status = st.selectbox("Update Status", ["Open", "In Progress", "Resolved", "Closed"], index=["Open", "In Progress", "Resolved", "Closed"].index(incident["Status"]))
-new_severity = st.selectbox("Update Severity", ["Low", "Medium", "High", "Critical"], index=["Low", "Medium", "High", "Critical"].index(incident["Severity"]))
-new_dept = st.selectbox("Update Department", sorted(df["department"].unique()), index=sorted(df["department"].unique()).index(incident["Department"]))
+new_status = st.selectbox("Update status", ["Open", "In Progress", "Resolved", "Closed"], index=["Open", "In Progress", "Resolved", "Closed"].index(incident["status"]))
+new_severity = st.selectbox("Update severity", ["Low", "Medium", "High", "Critical"], index=["Low", "Medium", "High", "Critical"].index(incident["severity"]))
+new_dept = st.selectbox("Update department", sorted(df["department"].unique()), index=sorted(df["department"].unique()).index(incident["department"]))
 
 #Update Button
 if st.button("💾 Save Changes"):
