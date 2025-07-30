@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title("Incident Detail View")
+st.title("📝 Incident Detail View")
 
 #Load Data
 @st.cache_data
