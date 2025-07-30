@@ -41,6 +41,8 @@ if dept_filter:
 #Initialize session state on first run
 if "reset" not in st.session_state:
     st.session_state.reset = False
+if st.session_state.reset:
+    st.session_state.reset = False
 
 #Title and table
 st.title("🛡️ Patient Safety Incident Tracker")
