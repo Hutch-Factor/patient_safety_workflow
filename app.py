@@ -14,9 +14,9 @@ df = load_data()
 
 #sidebar filters
 st.sidebar.header("Filter Incidents")
-status_filter = st.sidebar.multiselect("Status", options=df["Status"].unique(), default=df["Status"].unique())
-severity_filter = st.sidebar.multiselect("Severity", options=df["Severity"].unique(), default=df["Severity"].unique())
-dept_filter = st.sidebar.multiselect("Department", options=df["Department"].unique(), default=df["Department"].unique())
+status_filter = st.sidebar.multiselect("Status", options=df["status"].unique(), default=df["Status"].unique())
+severity_filter = st.sidebar.multiselect("Severity", options=df["severity"].unique(), default=df["Severity"].unique())
+dept_filter = st.sidebar.multiselect("Department", options=df["department"].unique(), default=df["Department"].unique())
 
 #Apply filters
 filtered_df = df[
