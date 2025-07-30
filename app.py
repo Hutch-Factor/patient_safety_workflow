@@ -20,9 +20,9 @@ dept_filter = st.sidebar.multiselect("Department", options=df["department"].uniq
 
 #Apply filters
 filtered_df = df[
-    (df["Status"].isin(status_filter)) &
-    (df["Severity"].isin(severity_filter)) &
-    (df["Department"].isin(dept_filter))
+    (df["status"].isin(status_filter)) &
+    (df["severity"].isin(severity_filter)) &
+    (df["department"].isin(dept_filter))
     ]
 
 #Title and table
