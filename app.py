@@ -7,10 +7,10 @@ st.set_page_config(page_title="Patient Safety Workflow", layout="wide")
 #Load data
 @st.cache_data
 def load_data():
-    df = pd.read.csv("incident_data.csv", parse_dates=["date_reported", "follow_up_due"])
+    df = pd.read_csv("incident_data.csv", parse_dates=["date_reported", "follow_up_due"])
     return df
 
-df = load_data("incident_data.csv")
+df = load_data()
 
 #sidebar filters
 st.sidebar.header("Filter Incidents")
