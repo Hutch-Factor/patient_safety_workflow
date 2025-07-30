@@ -21,7 +21,6 @@ if st.sidebar.button("Reset Filters"):
     st.session_state.reset = True
     st.rerun()
 
-
 #Apply filters
 filtered_df = df.copy()
 if status_filter:
@@ -38,3 +37,51 @@ if "reset" not in st.session_state:
 st.title("🛡️ Patient Safety Incident Tracker")
 st.subheader(f"Displaying {len(filtered_df)} incidents")
 st.dataframe(filtered_df, use_container_width=True)
+
+st.markdown("---")
+with st.expander(" Submit a New Patient Safety Incident"):
+    with st.form("incident_form"):
+        st.subheader("New Incident Form")
+
+        date_reported = st.date_input("Date Reported")
+        reporter = st.text_input("Reported By (Name or Role)")
+        department = st.selectbox("Department", options=sorted(df["Department"].unuique()))
+        event_type = st.selectbox("Event Type", options=[
+            "Fall", "Medication Error", "Equipment Malfunction", "Pressure Injury",
+             "Misidentification", "Documentation Error", "Delayed Care"
+        ])
+        severity = st.selectbox("Severity", options=["Low", "Moderate", "High", "Critical"])
+        assigned_to = st.selectbox("Assigned To", options=[
+            "Safety Officer", "Risk Manager", "Quality Lead", "Biomed Team", "Wound Team"])
+        corrective_action = st.text_area("Initial Corrective Action (Optional)")
+        follow_up_due = st.date_input("Follow-Up Due Date")
+
+        submit = st.form_submit_button("Submit Incident")
+
+        if submit:
+            #Create new incident dictionary
+            new_incident = {
+                "report_id": f"PS{len(df) + 1:03d}",
+                "date_reported": date_reported,
+                "reporter": reporter,
+                "department": department,
+                "event_type": event_type,
+                "severity": severity,
+                "status": "Open",
+                "assigned_to": assigned_to,
+                "rca_complete": "No",
+                "corrective_action": corrective_action if corrective_action else "TBD",
+                "follow_up_due": follow_up_due,
+                "outcome": "Pending"
+            }
+
+            #Append to DataFrame
+            df = pd.concat([df, pd.DataFrame([new_incident])], ignore_index=True)
+
+            st.success("Incident submitted successfully!")
+
+            #Optional: Save to CSV (or database)
+            df.to_csv("incident_data.csv", index=False) 
+
+
+
