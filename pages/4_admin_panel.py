@@ -22,7 +22,7 @@ st.markdown("### Incident Management")
 incident_ids = df["report_id"].tolist()
 selected_id = st.selectbox("Select Incident ID to Manage", incident_ids)
 
-incident = df[df["Incident ID"] == selected_id].iloc[0]
+incident = df[df["report_id"] == selected_id].iloc[0]
 
 #Editable Fields
 new_status = st.selectbox("Update Status", ["Open", "In Progress", "Resolved", "Closed"], index=["Open", "In Progress", "Resolved", "Closed"].index(incident["status"]))
