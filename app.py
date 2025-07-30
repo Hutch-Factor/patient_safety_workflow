@@ -19,11 +19,13 @@ severity_filter = st.sidebar.multiselect("Severity", options=df["severity"].uniq
 dept_filter = st.sidebar.multiselect("Department", options=df["department"].unique(), default=df["department"].unique())
 
 #Apply filters
-filtered_df = df[
-    (df["status"].isin(status_filter)) &
-    (df["severity"].isin(severity_filter)) &
-    (df["department"].isin(dept_filter))
-    ]
+filtered_df = df.copy()
+if status_filter:
+    filtered_df = filtered_df[filtered_df["status"].isin(status_filter)]
+if severity_filter:
+    filtered_df = filtered_df[filtered_df["severity"].isin(severity_filter)]
+if dept_filter:
+    filtered_df = filtered_df[filtered_df["department"].isin(dept_filter)]
 
 #Title and table
 st.title("🛡️ Patient Safety Incident Tracker")
