@@ -1,6 +1,6 @@
 report_id,date_reported,reporter,department,event_type,severity,status,assigned_to,rca_complete,corrective_action,follow_up_due,outcome,description
 PS001,7/13/2025,Staff C,Med-Surg,Medication Error,High,In Review,Biomed Team,No,Policy updated,7/19/2025,Escalated,wrong meds given
-PS002,7/28/2025,Staff C,Radiology,Medication Error,High,Open,Biomed Team,No,Labeling changed,8/7/2025,Escalated,wrond dose given
+PS002,7/28/2025,Staff C,Radiology,Medication Error,High,Open,Biomed Team,No,Labeling changed,8/7/2025,Escalated,wrong dose given
 PS003,7/16/2025,Staff B,NICU,Misidentification,Moderate,Open,Quality Lead,No,New protocol issued,7/21/2025,No Harm,patient received improper procedure
 PS004,7/30/2025,Staff D,NICU,Fall,Moderate,Closed,Safety Officer,Yes,Labeling changed,8/5/2025,Escalated,patient fell in bathroom
 PS005,7/3/2025,Staff F,Radiology,Documentation Error,Low,In Review,Risk Manager,No,Labeling changed,7/13/2025,Resolved,wrong documentation given
