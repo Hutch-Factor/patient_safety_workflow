@@ -26,6 +26,8 @@ if severity_filter:
     filtered_df = filtered_df[filtered_df["severity"].isin(severity_filter)]
 if dept_filter:
     filtered_df = filtered_df[filtered_df["department"].isin(dept_filter)]
+if st.sidebar.button("Reset Filters"):
+    st.experimental_rerun()
 
 #Title and table
 st.title("🛡️ Patient Safety Incident Tracker")
