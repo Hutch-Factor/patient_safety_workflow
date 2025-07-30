@@ -21,6 +21,9 @@ if st.sidebar.button("Reset Filters"):
     st.session_state.reset = True
     st.rerun()
 
+if st.session_state.reset:
+    st.session_state.reset = False
+
 #Use default values unless reset was triggered
 default_status = df["Status"].unique() if not st.session_state.reset else []
 default_severity = df["Severity"].unique() if not st.session_state.reset else []
@@ -40,8 +43,6 @@ if dept_filter:
     filtered_df = filtered_df[filtered_df["department"].isin(dept_filter)]
 #Initialize session state on first run
 if "reset" not in st.session_state:
-    st.session_state.reset = False
-if st.session_state.reset:
     st.session_state.reset = False
 
 #Title and table
