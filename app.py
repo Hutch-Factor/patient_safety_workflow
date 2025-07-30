@@ -26,12 +26,12 @@ default_status = df["Status"].unique() if not st.session_state.reset else []
 default_severity = df["Severity"].unique() if not st.session_state.reset else []
 default_dept = df["Department"].unique() if not st.session_state.reset else []
 
+if st.session_state.reset:
+    st.session_state.reset = False
+
 status_filter = st.sidebar.multiselect("Status", options=df["Status"].unique(), default=default_status)
 severity_filter = st.sidebar.multiselect("Severity", options=df["Severity"].unique(), default=default_severity)
 dept_filter = st.sidebar.multiselect("Department", options=df["Department"].unique(), default=default_dept)
-
-if st.session_state.reset:
-    st.session_state.reset = False
 
 #Apply filters
 filtered_df = df.copy()
