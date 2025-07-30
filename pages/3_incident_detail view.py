@@ -32,7 +32,7 @@ selected_index = st.selectbox("Select an incident to view details:", filtered_df
 if selected_index:
     selected_incident = filtered_df.loc[selected_index]
 
-    st.subheader(f"📌Incident: {selected_incident['incident_id']}")
+    st.subheader(f"📌Incident: {selected_incident['report_id']}")
     st.markdown(f"**Date Reported:** {selected_incident['date_reported'].date()}")
     st.markdown(f"**Reported By:** {selected_incident['reported_by']}")
     st.markdown(f"**Department:** {selected_incident['department']}")
