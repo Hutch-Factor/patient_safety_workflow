@@ -30,7 +30,7 @@ st.bar_chart(severity_counts)
 
 st.markdown("Incidents by Department")
 dept_counts = df["department"].value_counts()
-st.bar_chart(department_counts)
+st.bar_chart(dept_counts)
 
 st.markdown("Trend Over Time")
 daily_counts = df["date_reported"].value_counts().sort_index()
