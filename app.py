@@ -21,11 +21,6 @@ if st.sidebar.button("Reset Filters"):
     st.session_state.reset = True
     st.rerun()
 
-#Use default values unless reset was triggered
-default_status = df["Status"].unique() if not st.session_state.reset else []
-default_severity = df["Severity"].unique() if not st.session_state.reset else []
-default_dept = df["Department"].unique() if not st.session_state.reset else []
-
 status_filter = st.sidebar.multiselect("Status", options=df["Status"].unique(), default=default_status)
 severity_filter = st.sidebar.multiselect("Severity", options=df["Severity"].unique(), default=default_severity)
 dept_filter = st.sidebar.multiselect("Department", options=df["Department"].unique(), default=default_dept)
