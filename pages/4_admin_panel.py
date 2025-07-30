@@ -31,15 +31,15 @@ new_dept = st.selectbox("Update Department", sorted(df["department"].unique()), 
 
 #Update Button
 if st.button("💾 Save Changes"):
-    df.loc[df["Incident ID"] == selected_id, "status"] = new_status
-    df.loc[df["Incident ID"] == selected_id, "severity"] = new_severity
-    df.loc[df["Incident ID"] == selected_id, "department"] = new_dept
+    df.loc[df["report_id"] == selected_id, "status"] = new_status
+    df.loc[df["report_id"] == selected_id, "severity"] = new_severity
+    df.loc[df["report_id"] == selected_id, "department"] = new_dept
     save_data(df)
     st.success("Incident Updated Successfully!")
 
 #Optional: Delete Incident
 if st.button("🗑️ Delete Incident"):
-    df = df[df["Incident ID"] != selected_id]
+    df = df[df["report_id"] != selected_id]
     save_data(df)
     st.warning("Incident Deleted.")
 
