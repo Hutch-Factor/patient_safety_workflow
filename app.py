@@ -17,6 +17,21 @@ st.sidebar.header("Filter Incidents")
 status_filter = st.sidebar.multiselect("Status", options=df["status"].unique(), default=df["status"].unique())
 severity_filter = st.sidebar.multiselect("Severity", options=df["severity"].unique(), default=df["severity"].unique())
 dept_filter = st.sidebar.multiselect("Department", options=df["department"].unique(), default=df["department"].unique())
+if st.sidebar.button("Reset Filters"):
+    st.session_state.reset = True
+    st.rerun()
+
+#Use default values unless reset was triggered
+default_status = df["Status"].unique() if not st.session_state.reset else []
+default_severity = df["Severity"].unique() if not st.session_state.reset else []
+default_dept = df["Department"].unique() if not st.session_state.reset else []
+
+status_filter = st.sidebar.multiselect("Status", options=df["Status"].unique(), default=default_status)
+severity_filter = st.sidebar.multiselect("Severity", options=df["Severity"].unique(), default=default_severity)
+dept_filter = st.sidebar.multiselect("Department", options=df["Department"].unique(), default=default_dept)
+
+if st.session_state.reset:
+    st.session_state.reset = False
 
 #Apply filters
 filtered_df = df.copy()
@@ -26,8 +41,9 @@ if severity_filter:
     filtered_df = filtered_df[filtered_df["severity"].isin(severity_filter)]
 if dept_filter:
     filtered_df = filtered_df[filtered_df["department"].isin(dept_filter)]
-if st.sidebar.button("Reset Filters"):
-    st.experimental_rerun()
+#Initialize session state on first run
+if "reset" not in st.session_state:
+    st.session_state.reset = False
 
 #Title and table
 st.title("🛡️ Patient Safety Incident Tracker")
