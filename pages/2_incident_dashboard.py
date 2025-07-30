@@ -25,8 +25,8 @@ st.markdown("---")
 
 #Charts
 st.subheader("Incidents by Severity")
-severity_chart = px.bar(df["Severity"].value_counts().reset_inndex(),
-                        x="index", y="severity", labels={"index": "Severity", "severity": "Count"},
+severity_chart = px.bar(df["Severity"].value_counts().reset_index(),
+                        x="index", y="severity", labels={"index": "Severity", "Severity": "Count"},
                         color="index", title="Incidents by Severity")
 st.plotly_chart(severity_chart, use_container_width=True)
 
