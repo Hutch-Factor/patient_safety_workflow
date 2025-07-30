@@ -24,18 +24,14 @@ col4.metric("Critical Incidents", len(df[df["severity"] == "Critical"]))
 st.markdown("---")
 
 #Charts
-st.subheader("Incidents by Severity")
-severity_chart = px.bar(df["Severity"].value_counts().reset_index(),
-                        x="index", y="severity", labels={"index": "Severity", "Severity": "Count"},
-                        color="index", title="Incidents by Severity")
-st.plotly_chart(severity_chart, use_container_width=True)
+st.markdown("Incidents by Severity")
+severity_counts = df["Severity"].value_counts()
+st.bar_chart(severity_counts)
 
-st.subheader("Incidents by Department")
-dept_chart = px.pie(df, names="Department", title="Incident by Department")
-st.plotly_chart(dept_chart, use_container_width=True)
+st.markdown("Incidents by Department")
+dept_counts = df["Department"].value_counts()
+st.bar_chart(department_counts)
 
-st.subheader("Trend Over Time")
-df["date_reported"] = pd.to_datetime(df["date_reported"])
-daily_counts = df.groupby("date_reported").size().reset_index(name="count")
-time_chart = px.line(daily_counts, x="date_reported", y="count", title="Daily Incident Reports")
-st.plotly_chart(time_chart, use_container_width=True)
+st.markdown("Trend Over Time")
+daily_counts = df["Date_Reported"].value_counts().sort_index()
+st.line_chart(daily_counts)
