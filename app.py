@@ -14,9 +14,9 @@ df = load_data()
 
 #sidebar filters
 st.sidebar.header("Filter Incidents")
-status_filter = st.sidebar.multiselect("Status", options=df["status"].unique(), default=df["status"].unique())
-severity_filter = st.sidebar.multiselect("Severity", options=df["severity"].unique(), default=df["severity"].unique())
-dept_filter = st.sidebar.multiselect("Department", options=df["department"].unique(), default=df["department"].unique())
+status_filter = st.sidebar.multiselect("status", options=df["status"].unique(), default=df["status"].unique())
+severity_filter = st.sidebar.multiselect("severity", options=df["severity"].unique(), default=df["severity"].unique())
+dept_filter = st.sidebar.multiselect("department", options=df["department"].unique(), default=df["department"].unique())
 if st.sidebar.button("Reset Filters"):
     st.session_state.reset = True
     st.rerun()
